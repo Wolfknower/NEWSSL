@@ -36,7 +36,7 @@ def send_slack_alert(webhook_url, domain, remaining_days):
 
 
 if __name__ == "__main__":
-	DOMAINS_FILE = "domains.txt"
+	DOMAINS_FILE = "domainnames.txt"
 
 	if os.path.exists(DOMAINS_FILE):
 		with open(DOMAINS_FILE , "r") as file:
