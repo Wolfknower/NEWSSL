@@ -24,8 +24,6 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
-          cd ~/.ssh
-          echo "$SSH_PRIVATE_KEY" > id_rsa
-          chmod 600 id_rsa
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           ssh-keyscan -H 65.1.132.122 >> known_hosts
           ssh root@65.1.132.122 "ls" 
