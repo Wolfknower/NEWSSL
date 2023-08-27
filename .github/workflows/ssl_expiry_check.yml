@@ -21,8 +21,8 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       - name: Configure SSH
-        run: mkdir -p ~/.ssh echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa chmod
-          600 ~/.ssh/id_rsa ssh-keyscan -H 65.1.132.122 >> ~/.ssh/known_hosts
+        run: cd  ~/.ssh echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa 
+         chmod 600 ~/.ssh/id_rsa ssh-keyscan -H 65.1.132.122 >> ~/.ssh/known_hosts
       - name: Run command on server
         run: |
           ssh root@65.1.132.122 "ls"
