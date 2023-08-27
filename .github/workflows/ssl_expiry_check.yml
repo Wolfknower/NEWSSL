@@ -25,4 +25,4 @@ jobs:
           600 ~/.ssh/id_rsa ssh-keyscan -H your_server_ip >> ~/.ssh/known_hosts
       - name: Run command on server
         run: |
-          ssh your_username@your_server_ip "your_command_here"
+          ssh root@65.1.132.122 "ls"
