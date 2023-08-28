@@ -25,5 +25,5 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-          ssh-keyscan -H 65.1.132.122 >> known_hosts
-          ssh root@65.1.132.122 "ls" 
+          ssh-keyscan -H 13.235.254.45 >> known_hosts
+          ssh root@13.235.254.45 "ls" 
