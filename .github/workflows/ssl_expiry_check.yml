@@ -20,10 +20,12 @@ jobs:
         run: python ssl_expiry_check.py
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-      - name: Configure SSH and Run Command
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Configure SSH
         run: |
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-          ssh-keyscan -H 13.235.254.45 >> known_hosts
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H 13.235.254.45 >> ~/.ssh/known_hosts
+      - name: Run command on server
+        run: |
           ssh root@13.235.254.45 "ls" 
