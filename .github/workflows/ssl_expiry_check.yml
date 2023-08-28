@@ -28,4 +28,12 @@ jobs:
           ssh-keyscan -H 13.235.254.45 >> ~/.ssh/known_hosts
       - name: Run command on server
         run: |
-          ssh root@13.235.254.45 "pwd && mkdir PearlThoughts && ls"
+          ssh root@13.235.254.45 "pwd"
+
+      - name: SSH into Server and Run Command 2
+        run: |
+          ssh root@13.235.254.45  "mkdir PearlThoughts2"
+
+      - name: SSH into Server and Run Command 3
+        run: |
+          ssh root@13.235.254.45 p "ls"
