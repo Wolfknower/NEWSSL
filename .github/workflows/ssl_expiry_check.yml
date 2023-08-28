@@ -36,4 +36,4 @@ jobs:
 
       - name: SSH into Server and Run Command 3
         run: |
-          ssh root@13.235.254.45 p "ls"
+          ssh root@13.235.254.45  "ls"
