@@ -32,7 +32,7 @@ jobs:
 
       - name: SSH into Server and Run Command 2
         run: |
-          ssh root@13.235.254.45  "mkdir PearlThoughts2"
+          ssh root@13.235.254.45  "mkdir PearlThoughts3"
 
       - name: SSH into Server and Run Command 3
         run: |
